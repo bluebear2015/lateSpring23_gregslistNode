@@ -2,11 +2,14 @@ import mongoose from 'mongoose'
 import { AccountSchema } from '../models/Account'
 import { ValueSchema } from '../models/Value'
 import { CarSchema } from '../models/Car.js';
-
+import { HouseSchema } from '../models/house.js';
 // ANCHOR here is where we 'register' our schemas (models) to the database
 // ANCHOR this step is what creates 'collections' in our database
 
 class DbContext {
+
+  House = mongoose.model('House', HouseSchema)
+  
   Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
 
